@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Facts from "./pages/Facts";
+import Breeds from "./pages/Breeds";
+import Groups from "./pages/Groups";
 
 function App() {
+  const [tab, setTab] = useState("facts");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Dog API App</h1>
+
+      <button onClick={() => setTab("facts")}>Facts</button>
+      <button onClick={() => setTab("breeds")}>Breeds</button>
+      <button onClick={() => setTab("groups")}>Groups</button>
+
+      {tab === "facts" && <Facts />}
+      {tab === "breeds" && <Breeds />}
+      {tab === "groups" && <Groups />}
     </div>
   );
 }
