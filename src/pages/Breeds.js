@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import BreedCard from "../components/BreedCard";
 
 function Breeds() {
   const [breeds, setBreeds] = useState([]);
@@ -16,9 +17,11 @@ function Breeds() {
   return (
     <div>
       <h2>Breeds</h2>
-      {breeds.map((breed) => (
-        <p key={breed.id}>{breed.attributes.name}</p>
-      ))}
+<div className="grid">
+  {breeds.map((breed) => (
+    <BreedCard key={breed.id} breed={breed} />
+  ))}
+</div>
     </div>
   );
 }

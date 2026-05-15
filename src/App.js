@@ -9,20 +9,17 @@ function App() {
     <Router>
       <div>
 
-        {/* 🔹 Header */}
         <header className="header">
           <h1>Dog API App</h1>
         </header>
 
-        {/* 🔹 Navbar */}
         <nav className="navbar">
           <NavLink to="/facts" className="nav-link">Facts</NavLink>
           <NavLink to="/breeds" className="nav-link">Breeds</NavLink>
           <NavLink to="/groups" className="nav-link">Groups</NavLink>
         </nav>
 
-        {/* 🔹 Pages */}
-        <main className="main">
+          <main className="main">
           <Routes>
             <Route path="/" element={<Facts />} />
             <Route path="/facts" element={<Facts />} />
@@ -30,7 +27,6 @@ function App() {
             <Route path="/groups" element={<Groups />} />
           </Routes>
         </main>
-
       </div>
     </Router>
   );
